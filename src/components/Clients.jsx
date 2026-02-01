@@ -12,22 +12,24 @@ const Clients = () => {
     { name: "Bank Sulteng", url: "/images/clients/bank-sulteng-logo our client.png" },
     { name: "BBVET Maros", url: "/images/clients/bbvet maros logo our client.png" },
     { name: "BPS Makassar", url: "/images/clients/badan pusat statistik makassar logo our client.png" },
+    { name: "Golden", url: "/images/clients/golden.jpg" },
     { name: "Bosowa Berlian Motor", url: "/images/clients/bosowa-berlian-motor-logo our client.png" },
     { name: "Dimarco", url: "/images/clients/dimarco logo our client.png" },
-    { name: "Pengadilan Negeri Makassar", url: "/images/clients/pengadilan negri kota makassar logo our client.png" },
     { name: "Universitas UMI", url: "/images/clients/universitas umi logo our client.png" },
+    { name: "Pengadilan Negeri Makassar", url: "/images/clients/pengadilan negri kota makassar logo our client.png" },
     { name: "SAS", url: "/images/clients/sas logo our client.png" },
   ];
 
   useEffect(() => {
-    if (window.location.pathname === "/klien") {
-      setShowAll(true);
+    if (typeof window !== "undefined") {
+      if (window.location.pathname === "/klien") {
+        setShowAll(true);
+      }
     }
   }, []);
 
   return (
-    <section className="relative py-24 px-6 overflow-hidden border-t border-slate-100 bg-white">
-      {/* Watermark background khusus halaman /klien */}
+    <section className="relative py-24 px-6 overflow-hidden border-t border-slate-100 bg-white font-sans">
       {showAll && (
         <div
           className="absolute inset-0 opacity-5 bg-no-repeat bg-center bg-contain pointer-events-none"
@@ -36,47 +38,49 @@ const Clients = () => {
       )}
 
       <div className="container mx-auto text-center relative z-10">
-        <h2 className="text-5xl font-black text-[#1e40af] mb-4">
+        {/* JUDUL - Montserrat untuk kesan kokoh */}
+        <h2 className="text-4xl md:text-5xl font-[900] text-[#1e40af] mb-4 tracking-tight font-['Montserrat']">
           Klien <span className="text-yellow-500">Kami</span>.
         </h2>
 
-        <p className="text-gray-500 text-lg font-medium mb-14">
+        <p className="text-gray-500 text-base md:text-lg font-medium mb-16 max-w-2xl mx-auto">
           Beberapa perusahaan dan instansi yang menggunakan layanan kami
         </p>
 
-        {/* ===== PAGE /KLIEN ===== */}
         {showAll ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-20 gap-x-12 max-w-5xl mx-auto place-items-center px-4">
+          /* ================= PAGE /KLIEN ================= */
+          /* Menggunakan Flexbox agar sisa logo di baris terakhir otomatis ke tengah */
+          <div className="flex flex-wrap justify-center gap-y-16 gap-x-8 md:gap-y-24 md:gap-x-16 max-w-5xl mx-auto px-4">
             {clientLogos.map((client, index) => {
-              const isSAS = client.name === "SAS";
-
+              // Logo Golden sekarang masuk ke grup normal, 
+              // sedangkan SAS dan UMI akan otomatis ke tengah jika berada di baris terakhir
               return (
                 <div
-                  key={index}
-                  className={isSAS ? "lg:col-span-3 flex justify-center" : ""}
+                  key={`${client.name}-${index}`}
+                  className="flex items-center justify-center w-[40%] md:w-[28%] h-16 md:h-20 transition-transform duration-300 hover:scale-105"
                 >
                   <img
                     src={client.url}
                     alt={client.name}
-                    className="h-14 md:h-16 object-contain max-w-full"
+                    className="max-h-12 md:max-h-16 w-auto object-contain mix-blend-multiply"
                   />
                 </div>
               );
             })}
           </div>
         ) : (
-          /* ===== PAGE LAIN (MARQUEE) ===== */
+          /* ================= BERANDA (MARQUEE) ================= */
           <div className="relative flex overflow-x-hidden justify-center">
             <div className="flex animate-marquee whitespace-nowrap py-12">
               {[...clientLogos, ...clientLogos].map((client, index) => (
                 <div
-                  key={index}
+                  key={`${client.name}-${index}`}
                   className="mx-4 bg-white p-8 w-64 h-32 rounded-2xl shadow-md border border-gray-100 flex items-center justify-center flex-shrink-0"
                 >
                   <img
                     src={client.url}
                     alt={client.name}
-                    className="max-h-14 w-full object-contain"
+                    className="max-h-14 w-full object-contain mix-blend-multiply"
                   />
                 </div>
               ))}

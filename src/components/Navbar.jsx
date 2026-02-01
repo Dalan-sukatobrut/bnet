@@ -48,7 +48,6 @@ const Navbar = () => {
   }, [location]);
 
   return (
-    // font-sans biasanya otomatis merujuk ke Inter jika sudah dikonfigurasi di tailwind.config
     <nav className="fixed top-0 inset-x-0 z-[100] bg-[#0f172a]/95 backdrop-blur-xl shadow-2xl font-sans">
       <div className="w-full h-20 px-6 md:px-10 flex items-center justify-between">
 
@@ -64,7 +63,7 @@ const Navbar = () => {
           />
         </div>
 
-        {/* Desktop Menu - Dioptimalkan untuk Keterbacaan (Usia 40+) */}
+        {/* Desktop Menu - Menghapus class 'uppercase' */}
         <div className="hidden md:flex items-center space-x-8 text-[15px] lg:text-[16px] font-semibold tracking-wide">
           {navItems.map((item) => {
             const isActive = location.pathname === item.path;
@@ -73,7 +72,7 @@ const Navbar = () => {
                 key={item.id}
                 href={item.path}
                 onClick={(e) => handleNavClick(e, item)}
-                className={`relative px-2 py-1 transition-all duration-300 uppercase
+                className={`relative px-2 py-1 transition-all duration-300
                   ${isActive ? 'text-yellow-400' : 'text-white/90 hover:text-yellow-400'}
                 `}
               >
@@ -87,11 +86,11 @@ const Navbar = () => {
             );
           })}
 
-          {/* Link Khusus Tentang Kami */}
+          {/* Link Khusus Tentang Kami - Menghapus class 'uppercase' */}
           <Link
             to="/tentang-kami"
             onClick={() => setOpen(false)}
-            className={`relative px-4 py-2 rounded-lg border border-white/10 transition-all duration-300 uppercase ${
+            className={`relative px-4 py-2 rounded-lg border border-white/10 transition-all duration-300 ${
               location.pathname === '/tentang-kami'
                 ? 'text-yellow-400 border-yellow-400/50 bg-yellow-400/5'
                 : 'text-white/90 hover:text-yellow-400 hover:border-yellow-400/50'
@@ -110,7 +109,7 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Menu - Padding lebih luas agar mudah ditekan jari */}
+      {/* Mobile Menu - Menghapus class 'uppercase' */}
       <div
         className={`md:hidden absolute top-20 inset-x-0 bg-[#0f172a] border-t border-white/10 transition-all duration-300 shadow-2xl
           ${open ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}
@@ -123,8 +122,7 @@ const Navbar = () => {
                 key={item.name}
                 href={item.path}
                 onClick={(e) => handleNavClick(e, item)}
-                className={`px-8 py-3 text-sm sm:text-base font-semibold tracking-wide uppercase transition-all
-
+                className={`px-8 py-3 text-sm sm:text-base font-semibold tracking-wide transition-all
                   ${
                     location.pathname === item.path
                       ? 'text-yellow-400 bg-white/5 border-l-4 border-yellow-400'
