@@ -1,4 +1,4 @@
-import React from "react";
+  import React from "react";
 import { Box, ArrowRight, Gauge, ShieldCheck, Headphones } from "lucide-react";
 
 const Hero = () => {
@@ -65,29 +65,29 @@ const Hero = () => {
             segmen pengguna di Indonesia.
           </p>
 
-          {/* Buttons */}
+          {/* Buttons dengan Animasi Berlawanan */}
           <div className="flex flex-wrap gap-3 sm:gap-4 pt-3 mb-4">
             <button
               onClick={handleLayananClick}
-              className="bg-yellow-400 hover:bg-yellow-500 text-blue-950 px-5 sm:px-8 py-3 sm:py-4 rounded-xl font-black flex items-center gap-2 transition-all active:scale-95 text-xs sm:text-sm shadow-lg"
+              className="bg-yellow-400 hover:bg-yellow-500 text-blue-950 px-5 sm:px-8 py-3 sm:py-4 rounded-xl font-black flex items-center gap-2 transition-all active:scale-95 text-xs sm:text-sm shadow-lg animate-[float-up_3s_ease-in-out_infinite]"
             >
               Layanan Kami <ArrowRight size={16} className="sm:rotate-0" />
             </button>
 
             <button
               onClick={handleProdukClick}
-              className="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white px-5 sm:px-8 py-3 sm:py-4 rounded-xl font-bold flex items-center gap-2 transition-all text-xs sm:text-sm"
+              className="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white px-5 sm:px-8 py-3 sm:py-4 rounded-xl font-bold flex items-center gap-2 transition-all text-xs sm:text-sm animate-[float-down_3s_ease-in-out_infinite]"
             >
               <Box size={16} /> Produk Kami
             </button>
           </div>
 
           {/* Feature Panel */}
-          <div className="flex flex-wrap items-center gap-3 sm:gap-6 mt-5 bg-black/40 backdrop-blur-xl p-4 rounded-2xl border border-white/5 w-fit justify-start">
-            {" "}
+          <div className="flex flex-wrap items-center gap-3 sm:gap-6 mt-6 bg-black/40 backdrop-blur-xl p-3 sm:p-4 rounded-2xl border border-white/5 w-full sm:w-fit justify-start">
             <div className="flex items-center gap-2 sm:gap-3 text-white">
               <Gauge size={18} className="text-yellow-400" />
-              <span className="text-[9px] sm:text-[10px] md:text-[12px] font-black uppercase tracking-wider">
+              <span className="text-[9px]
+sm:text-[10px] md:text-[12px] font-black uppercase tracking-wider">
                 SLA 99%
               </span>
             </div>
@@ -108,6 +108,18 @@ const Hero = () => {
           </div>
         </div>
       </main>
+
+      {/* Tambahkan Style ini di index.css proyek Anda atau gunakan tag style ini */}
+      <style>{`
+        @keyframes float-up {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-8px); }
+        }
+        @keyframes float-down {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(8px); }
+        }
+      `}</style>
     </section>
   );
 };

@@ -37,7 +37,7 @@ const Features = () => {
         <div className="text-center mb-12 lg:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-[900] text-[#0f172a] mb-4 tracking-tighter leading-tight font-['Montserrat']">
             Mengapa Memilih <br />
-            <span className="text-blue-600 italic">Celebes Media Jaringan?</span>
+            <span className="text-blue-600">Celebes Media Jaringan?</span>
           </h2>
           <div className="w-24 h-1.5 bg-blue-600 mx-auto rounded-full"></div>
         </div>
@@ -84,9 +84,7 @@ const Features = () => {
               </div>
             )}
 
-            <div className="absolute top-6 left-6 bg-blue-500 text-white px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.2em] shadow-lg">
-              Official Profile
-            </div>
+            
           </div>
 
           {/* LIST FITUR VERTIKAL - Optimalisasi Keterbacaan */}

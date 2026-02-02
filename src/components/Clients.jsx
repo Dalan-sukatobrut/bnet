@@ -15,9 +15,9 @@ const Clients = () => {
     { name: "Golden", url: "/images/clients/golden.jpg" },
     { name: "Bosowa Berlian Motor", url: "/images/clients/bosowa-berlian-motor-logo our client.png" },
     { name: "Dimarco", url: "/images/clients/dimarco logo our client.png" },
-    { name: "Universitas UMI", url: "/images/clients/universitas umi logo our client.png" },
-    { name: "Pengadilan Negeri Makassar", url: "/images/clients/pengadilan negri kota makassar logo our client.png" },
     { name: "SAS", url: "/images/clients/sas logo our client.png" },
+    { name: "Pengadilan Negeri Makassar", url: "/images/clients/pengadilan negri kota makassar logo our client.png" },
+    { name: "Universitas UMI", url: "/images/clients/universitas umi logo our client.png" },
   ];
 
   useEffect(() => {
@@ -39,9 +39,16 @@ const Clients = () => {
 
       <div className="container mx-auto text-center relative z-10">
         {/* JUDUL - Montserrat untuk kesan kokoh */}
-        <h2 className="text-4xl md:text-5xl font-[900] text-[#1e40af] mb-4 tracking-tight font-['Montserrat']">
-          Klien <span className="text-yellow-500">Kami</span>.
-        </h2>
+        <div className="text-center mb-16">
+  <h2 className="text-3xl md:text-5xl font-black tracking-tight font-['Montserrat'] uppercase">
+    <span className="text-slate-900">KLIEN</span>{" "}
+    <span className="text-blue-600">KAMI</span>
+    <span className="text-blue-600"> .</span>
+  </h2>
+
+  {/* garis biru */}
+  <div className="w-16 h-1 bg-blue-600 mx-auto mt-4 rounded-full" />
+</div>
 
         <p className="text-gray-500 text-base md:text-lg font-medium mb-16 max-w-2xl mx-auto">
           Beberapa perusahaan dan instansi yang menggunakan layanan kami

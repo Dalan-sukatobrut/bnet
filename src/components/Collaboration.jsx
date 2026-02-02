@@ -25,7 +25,7 @@ PT Celebes Media Jaringan sebagai badan hukum terdaftar memiliki NIB: 9120205822
 
         {/* Judul Section - Menggunakan Montserrat untuk kesan geometris dan stabil */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-[900] text-[#0f172a] mb-4 tracking-tighter font-['Montserrat'] uppercase">
+          <h2 className="text-3xl md:text-5xl font-[900] text-[#0f172a] mb-4 tracking-tighter font-['Montserrat'] uppercase">
             Kolaborasi dan <span className="text-blue-600">Keanggotaan</span><span className="text-blue-600">.</span>
           </h2>
           <div className="w-24 h-1.5 bg-blue-600 mx-auto rounded-full"></div>
