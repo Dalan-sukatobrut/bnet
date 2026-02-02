@@ -83,7 +83,8 @@ const Hero = () => {
           </div>
 
           {/* Feature Panel */}
-          <div className="flex flex-wrap items-center gap-3 sm:gap-6 mt-6 bg-black/40 backdrop-blur-xl p-3 sm:p-4 rounded-2xl border border-white/5 w-full sm:w-fit justify-start">
+          <div className="flex flex-wrap items-center gap-3 sm:gap-6 mt-5 bg-black/40 backdrop-blur-xl p-4 rounded-2xl border border-white/5 w-fit justify-start">
+            {" "}
             <div className="flex items-center gap-2 sm:gap-3 text-white">
               <Gauge size={18} className="text-yellow-400" />
               <span className="text-[9px] sm:text-[10px] md:text-[12px] font-black uppercase tracking-wider">
@@ -112,6 +113,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
-
-
